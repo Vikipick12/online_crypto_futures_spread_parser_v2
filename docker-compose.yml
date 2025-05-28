@@ -11,4 +11,4 @@ services:
     volumes:
       - .:/app
     working_dir: /app
-    command: python bot.py
+    command: python tg_bot.py
