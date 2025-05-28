@@ -1,0 +1,4 @@
+/.env
+/venv
+/filtered_data.json
+/spread_config.json
