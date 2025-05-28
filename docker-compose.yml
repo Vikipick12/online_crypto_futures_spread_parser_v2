@@ -4,6 +4,11 @@ services:
   telegram-bot:
     build:
       context: .
+    environment:
+      TG_access_token_2: ${TG_access_token_2}
+      tg_admin_id: ${tg_admin_id}
+      chat_id: ${chat_id}
+      TG_access_token: ${TG_access_token}
     container_name: telegram-bot
     restart: unless-stopped
     working_dir: /app

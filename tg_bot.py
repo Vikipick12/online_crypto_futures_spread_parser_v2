@@ -13,7 +13,6 @@ from time import strftime
 from main import main as parser_v1
 
 print("Starting Telegram bot...")
-print(os.path.exists(".env"))
 if os.path.exists(".env"):
     print("Loading environment variables from .env file")
     load_dotenv()
