@@ -14,6 +14,7 @@ from main import main as parser_v1
 
 
 if os.path.exists(".env"):
+    print("Loading environment variables from .env file")
     load_dotenv()
 
 print(os.getenv("TG_access_token_2"))
