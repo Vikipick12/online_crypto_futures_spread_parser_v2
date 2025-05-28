@@ -6,7 +6,5 @@ services:
       context: .
     container_name: telegram-bot
     restart: unless-stopped
-    volumes:
-      - .:/app
     working_dir: /app
     command: python tg_bot.py
