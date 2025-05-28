@@ -15,6 +15,9 @@ from main import main as parser_v1
 
 if os.path.exists(".env"):
     load_dotenv()
+
+print(os.getenv("TG_access_token_2"))
+print(os.getenv("tg_admin_id"))
     
 TG_TOKEN = os.getenv("TG_access_token_2")
 TG_USER_ID = int(os.getenv("tg_admin_id"))
