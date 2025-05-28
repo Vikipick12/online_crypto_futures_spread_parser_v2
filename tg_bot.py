@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from os import getenv
+import os
 import asyncio
 from aiogram import Dispatcher, Bot
 from aiogram.filters import Command
@@ -13,9 +13,11 @@ from time import strftime
 from main import main as parser_v1
 
 
-load_dotenv()
-TG_TOKEN = getenv("TG_access_token_2")
-TG_USER_ID = int(getenv("tg_admin_id"))
+if os.path.exists(".env"):
+    load_dotenv()
+    
+TG_TOKEN = os.getenv("TG_access_token_2")
+TG_USER_ID = int(os.getenv("tg_admin_id"))
 dp = Dispatcher()
 
 class SpreadState(StatesGroup):
