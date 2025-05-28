@@ -3,6 +3,7 @@ import json
 from dotenv import load_dotenv
 from os import getenv
 import time
+import asyncio
 
 load_dotenv()
 TG_TOKEN = getenv("TG_access_token")
@@ -17,8 +18,7 @@ def fetch_arb_opportunities():
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
         }
     payload = {
-        "type": "spread",
-        "exchanges": "mexc_gate"
+        "type": "spread"
         }
     
     try:
@@ -95,12 +95,10 @@ def send_telegram_message(opps):
             last_sent_message = message
 
 
-def main(spread=1):
+async def main(spread=1):
     try:
         while True:
             filter_opportunities(min_spread_threshold=spread)
-            time.sleep(15)
+            await asyncio.sleep(15)
     except KeyboardInterrupt:
         print("Exit")
-
-main(3)

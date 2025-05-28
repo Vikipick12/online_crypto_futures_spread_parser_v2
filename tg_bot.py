@@ -10,6 +10,7 @@ from aiogram.fsm.context import FSMContext
 import json
 from parser import filter_opportunities
 from time import strftime
+from main import main as parser_v1
 
 
 load_dotenv()
@@ -91,6 +92,7 @@ async def main():
     bot = Bot(TG_TOKEN)
 
     asyncio.create_task(write_new_opp(bot))
+    asyncio.create_task(parser_v1(3))
 
     await dp.start_polling(bot)
 
