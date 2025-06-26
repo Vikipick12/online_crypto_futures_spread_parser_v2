@@ -11,7 +11,7 @@ def fetch_arb_opportunities():
         }
     payload = {
         "type": "spread",
-       "exchanges": "mexc_gate_bingx"
+       "exchanges": "mexc_gate_kucoin_bybit"
         }
     
     try:
